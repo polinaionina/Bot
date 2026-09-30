@@ -1,6 +1,10 @@
 package io.ionina.bot.service;
 
 import org.junit.jupiter.api.Test;
+
+import io.ionina.bot.models.MessageContent;
+import io.ionina.bot.models.TextContent;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -17,8 +21,8 @@ class EchoMessageServiceTest {
      */
     @Test
     void shouldReturnSameTextAsReceived() {
-        String result = echoMessageService.buildEchoResponse("Привет");
-        assertEquals("Привет", result);
+        MessageContent result = echoMessageService.buildEchoResponse(new TextContent("Привет"));
+        assertEquals(new TextContent("Привет"), result);
     }
 
     /**
@@ -26,7 +30,7 @@ class EchoMessageServiceTest {
      */
     @Test
     void shouldReturnEmptyStringWhenInputIsEmpty() {
-        assertEquals("", echoMessageService.buildEchoResponse(""));
+        assertEquals(new TextContent(""), echoMessageService.buildEchoResponse(new TextContent("")));
     }
 
     /**

@@ -1,22 +1,24 @@
 package io.ionina.bot.service;
 
+import io.ionina.bot.models.MessageContent;
+
 /**
  * Сервис, отвечающий за формирование ответа бота на входящее 
- * текстовое сообщение пользователя, ответ полностью 
- * повторяет текст входящего сообщения.
+ * сообщение пользователя, ответ полностью 
+ * повторяет входящее сообщение.
  */
 public class EchoMessageService implements MessageProcessingService {
 
     /**
-     * Формирует текст ответа бота на основе текста входящего сообщения пользователя.
-     * @param incomingText текст сообщения, полученного от пользователя; не может быть {@code null}
-     * @return текст ответа, который необходимо отправить пользователю (совпадает с {@code incomingText})
-     * @throws IllegalArgumentException если {@code incomingText} равен {@code null}
+     * Формирует ответ бота на основе входящего сообщения пользователя.
+     * @param incomingContent сообщение, полученное от пользователя; не может быть {@code null}
+     * @return ответ, который необходимо отправить пользователю (совпадает с {@code incomingContent})
+     * @throws IllegalArgumentException если {@code incomingContent} равен {@code null}
      */
-    public String buildEchoResponse(String incomingText) {
-        if (incomingText == null) {
-            throw new IllegalArgumentException("The text of the incoming message cannot be null.");
+    public MessageContent buildEchoResponse(MessageContent incomingContent) {
+        if (incomingContent == null) {
+            throw new IllegalArgumentException("The incoming message cannot be null.");
         }
-        return incomingText;
+        return incomingContent;
     }
 }

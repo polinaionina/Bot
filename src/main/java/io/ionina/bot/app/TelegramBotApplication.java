@@ -9,17 +9,14 @@ import io.ionina.bot.config.ConfigLoader;
 import io.ionina.bot.service.EchoMessageService;
 
 /**
- * Точка входа в приложение эхо-бота.
- * <p>
+ * Точка входа в приложение бота.
  * Загружает конфигурацию из переменных окружения {@code BOT_TOKEN} и {@code BOT_USERNAME},
- * создаёт бота и регистрирует его в Telegram Bot API с использованием длинного опроса
- * (long polling).
+ * создаёт бота и регистрирует его в Telegram Bot API
  */
 public class TelegramBotApplication {
 
     /**
      * Запускает приложение: собирает конфигурацию, создаёт и регистрирует бота.
-     * <p>
      * Метод объявлен {@code static}, так как это единственная сигнатура точки входа,
      * которую допускает виртуальная машина Java для запуска программы.
      *
