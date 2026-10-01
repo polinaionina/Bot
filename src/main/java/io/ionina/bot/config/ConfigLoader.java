@@ -35,10 +35,10 @@ public class ConfigLoader {
         String username = environmentVariables.get(USERNAME_VARIABLE_NAME);
 
         if (token == null || token.isBlank()) {
-            throw new IllegalStateException("Переменная окружения " + TOKEN_VARIABLE_NAME + " не задана");
+            throw new IllegalArgumentException("Переменная окружения " + TOKEN_VARIABLE_NAME + " не задана");
         }
         if (username == null || username.isBlank()) {
-            throw new IllegalStateException("Переменная окружения " + USERNAME_VARIABLE_NAME + " не задана");
+            throw new IllegalArgumentException("Переменная окружения " + USERNAME_VARIABLE_NAME + " не задана");
         }
 
         return new BotConfig(token, username);

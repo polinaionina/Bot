@@ -10,5 +10,5 @@ import io.ionina.bot.models.MessageContent;
  * код общения с Telegram.
  */
 public interface MessageProcessingService {
-    MessageContent buildEchoResponse(MessageContent incomingContent);
+    MessageContent buildResponse(MessageContent incomingContent);
 }

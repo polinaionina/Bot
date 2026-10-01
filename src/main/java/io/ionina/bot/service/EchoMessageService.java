@@ -15,7 +15,7 @@ public class EchoMessageService implements MessageProcessingService {
      * @return ответ, который необходимо отправить пользователю (совпадает с {@code incomingContent})
      * @throws IllegalArgumentException если {@code incomingContent} равен {@code null}
      */
-    public MessageContent buildEchoResponse(MessageContent incomingContent) {
+    public MessageContent buildResponse(MessageContent incomingContent) {
         if (incomingContent == null) {
             throw new IllegalArgumentException("The incoming message cannot be null.");
         }

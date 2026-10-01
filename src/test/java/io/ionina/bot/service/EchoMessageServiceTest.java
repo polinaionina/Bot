@@ -21,7 +21,7 @@ class EchoMessageServiceTest {
      */
     @Test
     void shouldReturnSameTextAsReceived() {
-        MessageContent result = echoMessageService.buildEchoResponse(new TextContent("Привет"));
+        MessageContent result = echoMessageService.buildResponse(new TextContent("Привет"));
         assertEquals(new TextContent("Привет"), result);
     }
 
@@ -30,7 +30,7 @@ class EchoMessageServiceTest {
      */
     @Test
     void shouldReturnEmptyStringWhenInputIsEmpty() {
-        assertEquals(new TextContent(""), echoMessageService.buildEchoResponse(new TextContent("")));
+        assertEquals(new TextContent(""), echoMessageService.buildResponse(new TextContent("")));
     }
 
     /**
@@ -38,6 +38,6 @@ class EchoMessageServiceTest {
      */
     @Test
     void shouldThrowExceptionWhenInputIsNull() {
-        assertThrows(IllegalArgumentException.class, () -> echoMessageService.buildEchoResponse(null));
+        assertThrows(IllegalArgumentException.class, () -> echoMessageService.buildResponse(null));
     }
 }

@@ -78,7 +78,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             return;
         }
 
-        MessageContent responseContent = echoMessageService.buildEchoResponse(incomingContent);
+        MessageContent responseContent = echoMessageService.buildResponse(incomingContent);
 
         try {
             sendContent(chatId, responseContent);
